@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+*.iml
+*.class
+out/
+target/
+build/
+.gradle/
+*.log
+*.tmp
+.env
+.env.*
+*.key
+*.pem
