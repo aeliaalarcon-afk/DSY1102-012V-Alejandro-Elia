@@ -28,3 +28,27 @@ Deben validarse con los requisitos de las siguientes actividades.
   tanto el tigre como el león pueden rugir.
 - Los datos particulares son ejemplos relevantes para esta propuesta,
   no características exclusivas de una especie en todos los contextos.
+
+## Sobrescritura de comportamiento — LAB-VET-11
+
+La operación común es public void emitirSonido(), definida en Animal.
+Mascota y Salvaje la heredan. Las especies concretas la sobrescriben
+usando @Override y conservando el nombre, los parámetros y el retorno.
+
+| Clase | Respuesta a emitirSonido() |
+|---|---|
+| Animal | Muestra el nombre y un sonido genérico. |
+| Perro | Muestra el nombre y un ladrido: guau. |
+| Gato | Muestra el nombre y un maullido: miau. |
+| Tigre | Muestra el nombre e indica que ruge como un tigre. |
+| Leon | Muestra el nombre e indica que ruge como un león. |
+
+Tigre y Leon comparten la acción de rugir; el mensaje identifica
+la especie representada.
+
+Si una referencia de tipo Animal contiene un Perro, al llamar
+emitirSonido() se ejecuta la versión de Perro. Lo mismo ocurre
+con las demás especies: la respuesta depende del objeto real.
+
+Esto permite usar la misma operación sin elegir manualmente
+un método diferente para cada especie.
